@@ -19,7 +19,7 @@ namespace DataAccessObject
 
         public async Task AddStudent(string studentName)
         {
-            await _dbContext.Students.AddAsync(new Student { Name = studentName });
+            await _dbContext.Students.AddAsync(new Student { Name = studentName.Trim() });
             await _dbContext.SaveChangesAsync();
         }
 

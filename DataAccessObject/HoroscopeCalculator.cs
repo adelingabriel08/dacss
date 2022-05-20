@@ -1,7 +1,6 @@
 ﻿
 namespace DataAccessObject
 {
-    // business object
     public class HoroscopeCalculator
     {
         private readonly IStudentDAO _studentDAO;
@@ -18,7 +17,7 @@ namespace DataAccessObject
 
             if (student is null)
             {
-                Console.WriteLine($"Student {studentName} not found in the database");
+                Console.WriteLine($"Student {studentName} not found");
                 return;
             }
 
@@ -31,7 +30,7 @@ namespace DataAccessObject
 
             if (!students.Any())
             {
-                Console.WriteLine("No student found in the database");
+                Console.WriteLine("No students");
                 return;
             }
 
@@ -49,7 +48,7 @@ namespace DataAccessObject
         }
 
         private string GetStudentHoroscopeMessage(Student student)
-            => $"Student {student.Name} will have a " + (IsStudentHavingAGoodDay(student) ? "good" : "bad") + "day";
+            => $"Student {student.Name} will have a " + (IsStudentHavingAGoodDay(student) ? "good" : "bad") + " day";
 
 
     }
